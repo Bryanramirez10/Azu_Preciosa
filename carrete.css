@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d3f0f9; /* Fondo celeste pastel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /* Esto permite posicionar los corazones en el fondo */
+}
+
+.carousel-container {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #ffd1dc; /* Fondo rosado pastel */
+    z-index: 2; /* Contenido principal sobre los corazones */
+}
+
+.carousel {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide-image {
+    width: 220px;  /* Cambia el ancho según lo que necesites */
+    height: 300px; /* Cambia la altura según lo que necesites */
+    object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+    border-radius: 5px; /* Bordes redondeados */
+    display: block; /* Necesario para que el margen funcione */
+    margin: 0 auto; /* Centra la imagen */
+}
+
+
+.phrase {
+    font-size: 24px; /* Texto más grande */
+    font-weight: bold;
+    color: #333;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* Centrar frases sin foto dentro del cuadro rosa */
+.slide.no-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ocupar todo el alto del contenedor */
+    background-color: #ffd1dc; /* Fondo rosado pastel para todo el slide */
+}
+
+.slide.no-photo .phrase {
+    position: static; /* Quita el posicionamiento absoluto */
+    transform: none; /* Quita la traslación */
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: 28px; /* Texto más grande si lo prefieres */
+}
+
+/* Corazones flotando */
+.heart {
+    width: 50px;
+    height: 45px;
+    position: absolute;
+    bottom: -50px;
+    background-color: #ff8aae; /* Color rosa */
+    border-radius: 50% 50% 0 0;
+    transform: rotate(-45deg);
+    z-index: 1; /* Para que los corazones estén sobre el fondo pero detrás del contenido */
+    animation: float 8s infinite ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    width: 50px;
+    height: 45px;
+    background-color: #ff8aae;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: 0;
+    left: 25px;
+}
+
+.heart::after {
+    top: -25px;
+    left: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes float2 {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px) rotate(-45deg);
+        opacity: 0;
+    }
+}

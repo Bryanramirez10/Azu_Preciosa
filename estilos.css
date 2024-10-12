@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+.contenedor {
+    text-align: center;
+    margin: 20px auto;
+}
+
+h1 {
+    color: #343a40;
+}
+
+.rompecabezas {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 0.5px; /* Reducir el espacio entre piezas */
+    width: fit-content;
+    margin: auto;
+}
+
+.pieza {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border: 1px solid #007bff;
+}
+
+.oculto {
+    display: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaf3ff; /* Fondo azul claro */
+    margin: 0;
+    padding: 20px;
+}
+
+.contenedor {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #fff7f0; /* Fondo de la tarjeta */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h1 {
+    color: #ff7b7b; /* Color del encabezado */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#mensaje {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+#verMensaje {
+    background-color: #ff7b7b; /* Color del botón */
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#verMensaje:hover {
+    background-color: #ff4d4d; /* Color del botón al pasar el cursor */
+}
+
+.oculto {
+    display: none;
+}
